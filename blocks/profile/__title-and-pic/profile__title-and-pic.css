@@ -1,0 +1,11 @@
+@media screen and (max-width: 767px) {
+  .profile__title-and-pic {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+  }
+}
+
+
+
+

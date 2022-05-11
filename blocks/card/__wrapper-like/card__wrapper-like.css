@@ -1,0 +1,8 @@
+.card__wrapper-like {
+  margin-top: -4px;
+  padding: 25px 21px 31px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

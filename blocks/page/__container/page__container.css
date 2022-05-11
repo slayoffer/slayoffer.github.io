@@ -1,0 +1,10 @@
+.page__container {
+  align-self: center;
+  width: 880px;
+}
+
+@media screen and (max-width: 767px) {
+  .page__container {
+    width: 282px;
+  }
+}
