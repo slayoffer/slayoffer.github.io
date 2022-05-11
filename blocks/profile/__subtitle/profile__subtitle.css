@@ -1,5 +1,12 @@
+.profile__subtitle-para {
+  line-height: 22px;
+}
+
 @media screen and (max-width: 767px) {
-  .profile__subtitle {
+  .profile__subtitle-para {
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0;
     margin-top: 14px;
     margin-bottom: 36px;
   }
