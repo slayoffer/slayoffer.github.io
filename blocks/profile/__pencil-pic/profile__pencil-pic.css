@@ -1,10 +1,12 @@
 .profile__pencil-pic {
   position: relative;
-  top: -4px;
+  bottom: 0.5px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 879px) {
   .profile__pencil-pic {
-    top: -2px;
+    width: 7.5px;
+    height: 7.5px;
+    right: 2px;
   }
 }

@@ -1,0 +1,26 @@
+.profile__button-pencil {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #fff;
+  line-height: 5px;
+  margin-top: 6px;
+  margin-left: 18px;
+  background-color: transparent;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.profile__button-pencil:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 879px) {
+  .profile__button-pencil {
+    margin-bottom: 6px;
+    margin-right: 19px;
+    margin-left: 10px;
+    align-self: flex-end;
+    width: 18px;
+    height: 18px;
+  }
+}
