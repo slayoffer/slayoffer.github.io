@@ -1,0 +1,14 @@
+.profile__title-and-pic {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 879px) {
+  .profile__title-and-pic {
+    justify-content: flex-end;
+  }
+}
+
+
+
+

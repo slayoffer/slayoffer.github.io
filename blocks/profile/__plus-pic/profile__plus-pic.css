@@ -1,0 +1,11 @@
+.profile__plus-pic {
+  position: relative;
+  top: 1px;
+}
+
+@media screen and (max-width: 879px) {
+  .profile__plus-pic {
+    width: 16px;
+    height: 16px;
+  }
+}

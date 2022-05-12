@@ -1,0 +1,20 @@
+.popup__form-text {
+  font-size: 14px;
+  line-height: 17px;
+  margin-bottom: 30px;
+  display: block;
+  width: 100%;
+  padding: 0 0 13px 0;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.popup__form-text:last-of-type {
+  margin-bottom: 48px;
+}
+
+@media screen and (max-width: 879px) {
+  .popup__form-text:last-of-type {
+    margin-bottom: 45px;
+  }
+}

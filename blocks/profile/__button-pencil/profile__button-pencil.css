@@ -14,11 +14,13 @@
   opacity: 0.6;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 879px) {
   .profile__button-pencil {
     margin-bottom: 6px;
-    margin-right: 18px;
+    margin-right: 19px;
     margin-left: 10px;
     align-self: flex-end;
+    width: 18px;
+    height: 18px;
   }
 }

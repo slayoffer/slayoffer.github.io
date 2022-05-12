@@ -1,11 +1,11 @@
-.avatar {
+.profile__avatar {
   display: flex;
   gap: 50px;
   align-items: center;
 }
 
-@media screen and (max-width: 767px) {
-  .avatar {
+@media screen and (max-width: 879px) {
+  .profile__avatar {
     display: block;
     text-align: center;
   }
