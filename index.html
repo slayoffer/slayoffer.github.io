@@ -1,97 +1,131 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Mesto</title>
-  <link rel="stylesheet" href="./pages/index.css" />
-</head>
-
-<body class="page">
-  <header class="header">
-    <img class="logo" src="./img/Vector.svg" alt="Лого сайта Место">
-  </header>
-  <main class="page__container">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Mesto</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+    <script src="./js/index.js" defer></script>
+  </head>
+  <body class="page">
+    <header class="header">
+      <img class="logo" src="./img/Vector.svg" alt="Лого сайта Место" />
+    </header>
+    <main class="page__container">
       <section class="profile">
         <div class="profile__avatar">
-          <img class="profile__avatar-foto" src="./img/image.jpg" alt="Фото пользователя">
+          <img
+            class="profile__avatar-foto"
+            src="./img/image.jpg"
+            alt="Фото пользователя"
+          />
           <div class="profile__info">
             <div class="profile__title-and-pic">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
               <button class="profile__button-pencil" type="button">
-                <img class="profile__pencil-pic" src="./img/Pencil.svg" alt="Кнопка Редактировать">
+                <img
+                  class="profile__pencil-pic"
+                  src="./img/Pencil.svg"
+                  alt="Кнопка Редактировать"
+                />
               </button>
             </div>
-              <p class="profile__subtitle">Исследователь океана</p>
+            <p class="profile__subtitle">Исследователь океана</p>
           </div>
         </div>
         <button class="profile__button-plus" type="button">
-          <img class="profile__plus-pic" src="./img/plus.svg" alt="Кнопка Добавить публикацию">
+          <img
+            class="profile__plus-pic"
+            src="./img/plus.svg"
+            alt="Кнопка Добавить публикацию"
+          />
         </button>
       </section>
       <section class="grid-foto">
-        <article class="card">
-          <img class="card__image" src="./img/Karachaevsk.jpg" alt="Фото Карачаевска">
-          <div class="card__wrapper-like">
-            <h3 class="card__para">Карачаевск</h3>
-            <button class="card__like" type="button"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img class="card__image" src="./img/Elbrus.jpg" alt="Фото Эльбруса">
-          <div class="card__wrapper-like">
-            <h3 class="card__para">Гора Эльбрус</h3>
-            <button class="card__like" type="button"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img class="card__image" src="./img/Dombai.jpg" alt="Фото Домбай">
-          <div class="card__wrapper-like">
-            <h3 class="card__para">Домбай</h3>
-            <button class="card__like" type="button"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img class="card__image" src="./img/Elbrus.jpg" alt="Фото Эльбруса">
-          <div class="card__wrapper-like">
-            <h3 class="card__para">Гора Эльбрус</h3>
-            <button class="card__like" type="button"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img class="card__image" src="./img/Dombai.jpg" alt="Фото Домбай 2">
-          <div class="card__wrapper-like">
-            <h3 class="card__para">Домбай</h3>
-            <button class="card__like" type="button"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img class="card__image" src="./img/Karachaevsk.jpg" alt="Фото Карачаевска 2">
-          <div class="card__wrapper-like">
-            <h3 class="card__para">Карачаево-Черкесск</h3>
-            <button class="card__like" type="button"></button>
-          </div>
-        </article>
+        <template id="template-card">
+          <article class="card">
+            <div class="card__image-box">
+              <img class="card__image" src="" alt="" />
+              <img
+                class="card__trash"
+                src="/img/Trash.svg"
+                alt="Кнопка Удалить карточку"
+              />
+            </div>
+            <div class="card__wrapper-like">
+              <h3 class="card__para"></h3>
+              <button class="card__like" type="button"></button>
+            </div>
+          </article>
+        </template>
       </section>
-  </main>
-  <footer class="footer">
-    <p class="footer__copyright-author">&copy; 2022 Mesto Russia</p>
-  </footer>
-  <div class="popup popup_opened">
-    <div class="popup__container">
-      <button class="popup__toggle" type="button">
-      </button>
-      <form class="popup__form" name="edit">
-        <h2 class="popup__heading">Редактировать профиль</h2>
-        <input class="popup__form-text" type="text" id="heading" name="heading" placeholder="ФИО" value="Жак-Ив Кусто"
-          required>
-        <input class="popup__form-text" type="text" id="subheading" name="subheading" placeholder="Профессия"
-          value="Исследователь океана" required>
-        <button class="popup__button" type="submit">Сохранить</button>
-      </form>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright-author">&copy; 2022 Mesto Russia</p>
+    </footer>
+    <div id="form-edit-profile" class="popup">
+      <div class="popup__container">
+        <button class="popup__toggle" type="button"></button>
+        <form id="popup-profile-form" class="popup__form" name="edit">
+          <h2 class="popup__heading">Редактировать профиль</h2>
+          <input
+            class="popup__form-text"
+            type="text"
+            id="heading"
+            name="heading"
+            placeholder="ФИО"
+            value=""
+            required
+          />
+          <input
+            class="popup__form-text"
+            type="text"
+            id="subheading"
+            name="subheading"
+            placeholder="Профессия"
+            value=""
+            required
+          />
+          <button class="popup__button" type="submit">Сохранить</button>
+        </form>
+      </div>
     </div>
-  </div>
-</body>
-
+    <div id="form-add-card" class="popup">
+      <div class="popup__container">
+        <button class="popup__toggle" type="button"></button>
+        <form id="popup-pic-form" class="popup__form" name="edit">
+          <h2 class="popup__heading">Новое место</h2>
+          <input
+            class="popup__form-text"
+            type="text"
+            id="pic-name"
+            name="heading"
+            placeholder="Название"
+            value=""
+            required
+          />
+          <input
+            class="popup__form-text"
+            type="text"
+            id="pic-link"
+            name="subheading"
+            placeholder="Ссылка на картинку"
+            value=""
+            required
+          />
+          <button class="popup__button" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <div id="foto-card" class="popup">
+      <div class="popup__foto-box">
+        <button class="popup__toggle" type="button"></button>
+        <img class="popup__foto" src="./img/Dombai.jpg" alt="test" />
+        <p class="popup__caption">test</p>
+      </div>
+    </div>
+  </body>
 </html>
