@@ -10,6 +10,7 @@
   const pictureName = document.querySelector("#pic-name");
   const pictureLink = document.querySelector("#pic-link");
   const imagePopup = document.querySelector("#foto-card");
+  const imagePopupImg = imagePopup.querySelector(".popup__foto");
   const gridCard = document.querySelector(".grid-foto");
 
   
@@ -64,24 +65,24 @@
   function createCard(item) {
     const templateCard = document.querySelector("#template-card");
     const cardElement = templateCard.content.cloneNode(true).querySelector(".card");
+    const cardElementImg = cardElement.querySelector(".card__image");
+    const cardElementLike = cardElement.querySelector(".card__like")
     cardElement.querySelector(".card__para").innerText = item["name"];
-    cardElement.querySelector(".card__image").src = item["link"];
-    cardElement.querySelector(".card__image").alt = item["name"];
-    
-    
-    cardElement.querySelector(".card__like").addEventListener("click", () => {
-	  cardElement.querySelector(".card__like").classList.toggle("card__like_active");
+    cardElementImg.src = item["link"];
+    cardElementImg.alt = item["name"];
+    cardElementLike.addEventListener("click", () => {
+    cardElementLike.classList.toggle("card__like_active");
 	});
 	
 	cardElement.querySelector('.card__image').addEventListener("click", () => {
-      imagePopup.querySelector(".popup__foto").src = item["link"];
-      imagePopup.querySelector(".popup__foto").alt = item["name"];
+      imagePopupImg.src = item["link"];
+      imagePopupImg.alt = item["name"];
       imagePopup.querySelector(".popup__caption").innerText = item["name"];
       openPopup(imagePopup);
     });
     
     cardElement.querySelector(".card__trash").addEventListener("click", () => {
-      cardElement.querySelector(".card__trash").closest(".card").remove();
+    cardElement.remove();
     });
 
     return cardElement;
@@ -89,15 +90,15 @@
   
   
   //функция добавления новых карточек
-  function addFormSubmitCard(event) {
+  function handleFormSubmitCard(event) {
     event.preventDefault();
-    const arrNewFile = [{
+    const arrNewFile = {
 	    name: pictureName.value,
 	    link: pictureLink.value,
-    }];
-    const card = createCard(arrNewFile[0]);
+    };
+    const card = createCard(arrNewFile);
     gridCard.prepend(card);
-    closePopup(document.querySelector("#form-add-card"));
+    closePopup(cardPopup);
     event.target.reset();
   }
   
@@ -145,17 +146,6 @@
 
 
   //сабмит для карточки
-  const formCard = document.querySelector("#form-add-card");
-  formCard.addEventListener("submit", addFormSubmitCard);
-  
-
-
-  //удаление карточки
-  const removeCard = document.querySelectorAll(".card__trash");
-  removeCard.forEach((bin) => {
-    bin.addEventListener("click", () => {
-      bin.closest(".card").remove();
-    });
-  });
+  cardPopup.addEventListener("submit", handleFormSubmitCard);
 
 })();
